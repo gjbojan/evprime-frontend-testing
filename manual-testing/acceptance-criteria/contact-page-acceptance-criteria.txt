@@ -1,0 +1,96 @@
+Contact Page - Acceptance Criteria
+
+NOTE: - Login is not mandatory
+	  - If user is not already on the Contact page, navigation can be performed via the Contact option in the sidebar
+	  - Required field and invalid email messages are browser/native HTML5 validation messages
+	  - The successful SEND flow is currently not completed; submitting valid data displays an unexpected 405 Method Not Allowed error page
+
+============================================================================================================================================================================================================================================
+
+Test Scenario 1: Contact Page UI Elements 
+GIVEN the user is on the EVPrime "http://localhost:3000/contact" Contact page
+WHEN the page is displayed to the user
+THEN the page title "Want to reach out?" is visible
+AND a username input field is visible
+AND an e-mail input field is visible
+AND a message input field is visible
+AND a "SEND" button is visible
+AND the following contact information is visible: - Address
+								                  - Email
+								                  - Phone Number
+
+Test Scenario 2: Verify hover effects on UI elements
+GIVEN the user is on the EVPrime "http://localhost:3000/contact" Contact page
+WHEN the user hovers over the username field
+THEN the field is highlighted
+AND a "Please fill out this field." message pops up
+WHEN the user hovers over the e-mail field
+THEN the field is highlighted
+AND a "Please fill out this field." message pops up
+WHEN the user hovers over the message field
+THEN the field is highlighted
+AND a "Please fill out this field." message pops up
+WHEN the user hovers over the "SEND" button
+THEN the button background color darkens
+
+Test Scenario 3: Verify effect on clicking on the fields
+GIVEN the user is on the EVPrime "http://localhost:3000/contact" Contact page
+WHEN the user clicks on the username field
+THEN the line changes its color to blue
+WHEN the user clicks on the e-mail field
+THEN the line changes its color to blue
+WHEN the user clicks on the message field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+
+Test Scenario 4: Functional "SEND" button
+NOTE: - The e-mail value must be in a valid e-mail format and contain @ (e.g., validemail@email.com)
+	  - This functionality is currently not fully implemented
+GIVEN the user is on the EVPrime "http://localhost:3000/contact" Contact page
+WHEN the user enters any value in the username field
+AND the user enters valid value in the e-mail field
+AND the user enters any text in the message field
+AND the user clicks on the "SEND" button
+THEN an unexpected application error is displayed
+AND the error message "405 Method Not Allowed" is displayed to the user
+
+Test Scenario 5: Required field validation - Username
+GIVEN the user is on the EVPrime "http://localhost:3000/contact" Contact page
+WHEN the user leaves the username field empty 
+AND the user leaves the e-mail field empty
+AND the user leaves the message field empty
+AND the user clicks on the "SEND" button
+THEN a "Please fill out this field." error message pops up under the username field
+AND the field line changes its color to blue
+
+Test Scenario 6: Required field validation - E-mail
+GIVEN the user is on the EVPrime "http://localhost:3000/contact" Contact page
+WHEN the user enters any value in the username field
+AND the user leaves the e-mail field empty
+AND the user leaves the message field empty
+AND the user clicks on the "SEND" button
+THEN an "Please fill out this field." error message pops up under the e-mail field
+AND the field line changes its color to blue
+
+Test Scenario 7: Invalid e-mail format validation
+NOTE: Invalid e-mail value is any value that does not contain @ (e.g, testemail.com)
+GIVEN the user is on the EVPrime "http://localhost:3000/contact" Contact page
+WHEN the user enters any value in the username field
+AND the user enters invalid value in the e-mail field
+AND the e-mail field line changes its color to red
+AND the user clicks on the "SEND" button
+THEN an "Please include an '@' in the email address. '{value}' is missing an '@'." error message pops up under the e-mail field
+AND the message field line is highlighted
+ 
+Test Scenario 8: Required field validation - Message
+NOTE: The e-mail value must be in a valid e-mail format and contain @ (e.g., validemail@email.com)
+GIVEN the user is on the EVPrime "http://localhost:3000/contact" Contact page
+WHEN the user enters any value in the username field
+AND the user enters valid value in the e-mail field
+AND the user leaves the message field empty
+AND the user clicks on the "SEND" button
+THEN an "Please fill out this field." error message pops up under the message field
+AND the message label moves above the input field
+AND the field line changes its color to blue
+AND the field line changes its color to blue

@@ -1,0 +1,573 @@
+EVENTS - Test Cases 
+
+Global NOTE: - A login must be done to create, edit, update, or delete events
+	       - Event list and event details can be viewed without login
+
+Global Pre-requisite/Note: - For test cases that require an authenticated user, log in with valid credentials before executing the steps
+				           - If this particular testing user is not created, create the user by:
+				              - Clicking on the "Login" option at the sidebar
+				              - Clicking on the "CREATE USER" button
+				              - Enter an email (testuser@email.com)
+				              - Enter a password (testuser123)
+				              - Click on the "GO" button
+				           - If the user already exists, use the credentials to log in
+
+Test Case 1: 
+	Pre-requisite: Do a signup / login with the credentials from the global pre-requisite
+	Test Description: Verify functional add event menu navigation
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/" Home page
+			    2. Hover over the "Add Event" floating action button
+			    3. Verify that the "+" icon changes to an "x" icon
+			    4. Verify that the "Create Event" option becomes visible
+			    5. Hover over the "Create Event" option
+			    6. Verify that the option is highlighted
+			    7. Click on the "Create Event" option
+	Expected Result: - The "Add Event" menu expands upon hover
+			         - The "+" icon changes to an "x" icon
+			         - The "Create Event" option becomes visible
+			         - The "Create Event" option is highlighted upon hover
+			         - Redirection to the EVPrime "http://localhost:3000/events/new" Create New Event page
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+============================================================================================================================================================================================================================================
+
+Create New Event Page - Test Cases
+
+Pre-requisite: Do a signup / login with the credentials from the global pre-requisite
+
+Test Case 2: 
+	Test Description: Verify hover effects on UI Elements - Event Title field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+		    	2. Hover over the Event Title field
+			    3. Verify that the field is highlighted
+	Expected Result: The Event Title field is highlighted upon hover
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 3: 
+	Test Description: Verify hover effects on UI Elements - Event Image field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+		    	2. Hover over the Event Image field
+			    3. Verify that the field is highlighted
+	Expected Result: The Event Image field is highlighted upon hover
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 4: 
+	Test Description: Verify hover effects on UI Elements - Event Date field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Hover over the Event Date field
+			    3. Verify that the field is highlighted
+	Expected Result: The Event Date field is highlighted upon hover
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 5: 
+	Test Description: Verify hover effects on UI Elements - Event Location field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Hover over the Event Location field
+			    3. Verify that the field is highlighted
+	Expected Result: The Event Location field is highlighted upon hover
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 6: 
+	Test Description: Verify hover effects on UI Elements - Event Description field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Hover over the Event Description field
+			    3. Verify that the field is highlighted
+	Expected Result: The Event Description field is highlighted upon hover
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 7: 
+	Test Description: Verify hover effects on UI Elements - "CREATE EVENT" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Hover over the "CREATE EVENT" button
+			    3. Verify that the button background color darkens
+	Expected Result: The "CREATE EVENT" button background color darkens
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 8: 
+	Test Description: Verify effect on clicking on the fields - Event Title field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Click on the Event Title field
+			    3. Verify that field label moves above the input field
+			    4. Verify that the field label color changes to blue
+		    	5. Verify that the input field border changes to blue
+	Expected Result: - The field label moves above the input field
+			         - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 9: 
+	Test Description: Verify effect on clicking on the fields - Event Image field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Click on the Event Image field
+			    3. Verify that field label moves above the input field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the input field border changes to blue
+	Expected Result: - The field label moves above the input field
+			         - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 10: 
+	Test Description: Verify effect on clicking on the fields - Event Date field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Click on the Event Date field
+			    3. Verify that field label moves above the input field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the input field border changes to blue
+	Expected Result: - The field label moves above the input field
+			         - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 11: 
+	Test Description: Verify effect on clicking on the fields - Event Location field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Click on the Event Location field
+			    3. Verify that field label moves above the input field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the input field border changes to blue
+	Expected Result: - The field label moves above the input field
+			         - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 12: 
+	Test Description: Verify effect on clicking on the fields - Event Description field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Click on the Event Description field
+			    3. Verify that field label moves above the input field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the input field border changes to blue
+	Expected Result: - The field label moves above the input field
+			         - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 13: 
+	NOTE: - Valid value for the Event Image field means an URL with http/https needs to be used
+		  - Every new created event is next in line
+	Test Description: Verify functional usage of the "CREATE EVENT" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+		    	2. Enter any value in the Event Title field
+			    3. Enter valid value in the Event Image field
+			    4. Enter any value in the Event Date field
+			    5. Enter any value in the Event Location field
+			    6. Enter any value in the Event Description field
+			    7. Click on the "CREATE EVENT" button
+	Test Data: Event Title = "Football Match"
+		       Event Image = "https://upload.wikimedia.org/wikipedia/commons/9/93/Est%C3%A1dio_Municipal_de_Aveiro_aerial_view.jpg"
+		       Event Date = "23.06.2026"
+		       Event Location = "Lisbon, Portugal"
+		       Event Description = "A friendly football match between Portugal and Argentina"
+	Expected Result: - Redirection to the EVPrime "http://localhost:3000/events" Events page
+			         - The new event is added in the list
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 14: 
+	NOTE: - Validation for empty fields is currently not fully implemented
+		 - Submitting empty fields currently triggers an application error instead of displaying validation messages
+	Test Description: Verify unsuccessful creation of a new event - All Fields Empty
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Leave all fields empty
+			    3. Click on the "CREATE EVENT" button
+	Expected Result: An unexpected application error is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 15: 
+	NOTE: - Validation for empty fields is currently not fully implemented
+		  - Submitting empty fields currently triggers an application error instead of displaying validation messages
+		  - Image URLs must start with http or https
+	Test Description: Verify unsuccessful creation of a new event - Invalid Event Image URL
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events/new" Create New Event page
+			    2. Enter any value in all required fields
+			    3. Enter invalid value in the image field
+			    4. Click on the "CREATE EVENT" button
+	Test Data: Event Image = "upload.wikimedia.org/wikipedia/commons/9/93/Est%C3%A1dio_Municipal_de_Aveiro_aerial_view.jpg"
+	Expected Result: An unexpected application error is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+		
+============================================================================================================================================================================================================================================
+
+Events Page - Test Cases
+
+NOTE: The id is written in {} because every event has its unique id
+Pre-requisite/NOTE: The event from test case 13 will be used for validation; in the end the event will be deleted in the last test case 
+
+Test Case 16:
+	Test Description: Verify Events Page UI Elements
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events" Events page
+			    2. Verify that a list of events is visible
+			    3. Verify that the following information is visible: - Event Image
+											                         - Event Title
+											                         - Event Date
+	Expected Result: - List of events is visible
+			         - The Event Image "https://upload.wikimedia.org/wikipedia/commons/9/93/Est%C3%A1dio_Municipal_de_Aveiro_aerial_view.jpg?w=248&fit=crop&auto=format" information is visible
+			         - The Event Title "Football Match" is visible
+			         - The Event Date "23.06.2026" is visible
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 17:
+	Test Description: Verify clickable event
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events" Events page
+			    2. Click on the events image
+	Expected Result: - Redirection to the Event "http://localhost:3000/events/{id}" Details page
+			         - The {id} in the URL corresponds to the selected event
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+============================================================================================================================================================================================================================================
+
+Event Details Page - Test Cases
+
+NOTE: The id is written in {} because every event has its unique id
+Pre-requisite/NOTE: The event from test case 13 will be used for validation; in the end the event will be deleted in the last test case 
+
+Test Case 18: 
+	Test Description: Verify Event Details Page UI Elements
+	Test Steps: 1. Open the Event Details page for the event created in Test Case 13
+		    	2. Verify that the event ID in the URL corresponds to the created event
+			    3. Verify that the following information is displayed: - Event Title
+												                       - Event Date
+												                       - Event Location
+												                       - Event Image
+												                       - Event Description
+			    4. Verify that the "BACK TO EVENTS" button is visible
+	Expected Result: - The event "Football Match" is visible with:
+			            - Event Title: Football Match
+			            - Event Date: 23.06.2026
+				        - Event Location: Lisbon, Portugal
+                        - Event Image (URL: https://upload.wikimedia.org/wikipedia/commons/9/93/Est%C3%A1dio_Municipal_de_Aveiro_aerial_view.jpg)
+				        - Event Description: A friendly football match between Portugal and Argentina
+			         - The "BACK TO EVENTS" button is visible
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 19:
+	Test Description: Verify functional usage of "BACK TO EVENTS" button
+	Test Steps: 1. Open the Event Details page for the event created in Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the "BACK TO EVENTS" button
+			    4. Verify that the button background color darkens
+			    5. Click on the "BACK TO EVENTS" button
+	Expected Result: Redirection to the EVPrime "http://localhost:3000/events" Events page
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+============================================================================================================================================================================================================================================
+
+Event Details Page - Test Cases while user is logged in
+
+Pre-requisite/NOTE: - Do a signup / login with the credentials from the global pre-requisite
+                    - The id is written in {} because every event has its unique id
+                    - The event from test case 13 will be used for validation; in the end the event will be deleted in the last test case 
+
+Test Case 20: 
+	Test Description: Verify Event Details Page UI Elements - Logged In
+	Test Steps: 1. Open the Event Details page for the event created in Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Verify that the following information is displayed: - Event Title
+												                       - Event Date
+											                       	   - Event Location
+												                       - Event Image
+												                       - Event Description
+			    4. Verify that the following buttons are displayed: - "DELETE EVENT"
+											                        - "EDIT EVENT"
+											                        - "BACK TO EVENTS"
+	Expected Result: - The event "Football Match" is visible with:
+			            - Event Title: Football Match
+			            - Event Date: 23.06.2026
+				        - Event Location: Lisbon, Portugal
+                        - Event Image (URL: https://upload.wikimedia.org/wikipedia/commons/9/93/Est%C3%A1dio_Municipal_de_Aveiro_aerial_view.jpg)
+				        - Event Description: A friendly football match between Portugal and Argentina
+			         - The following buttons are displayed: - "DELETE EVENT"
+										                    - "EDIT EVENT"
+										                    - "BACK TO EVENTS"
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 21:
+	Test Description: Verify hover effect on UI elements - "DELETE EVENT" button
+	Test Steps: 1. Open the Event Details page for the event created in Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the "DELETE EVENT" button
+			    4. Verify that the button background color darkens
+	Expected Result: The button "DELETE EVENT" background color darkens
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 22:
+	Test Description: Verify hover effect on UI elements - "EDIT EVENT" button
+	Test Steps: 1. Open the Event Details page for the event created in Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the "EDIT EVENT" button
+			    4. Verify that the button background color darkens
+	Expected Result: The button "EDIT EVENT" background color darkens
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 23:
+	Test Description: Verify hover effect on UI elements - "BACK TO EVENTS" button
+	Test Steps: 1. Open the Event Details page for the event created in Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the "BACK TO EVENTS" button
+			    4. Verify that the button background color darkens
+	Expected Result: The button "BACK TO EVENTS" background color darkens
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 24:
+	Test Description: Verify functional usage of the "DELETE EVENT" button - Choosing the option "NO"
+	Test Steps: 1. Open the Event Details page for the event created in Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Click on the "DELETE EVENT" button
+			    4. Verify that the confirmation popup is displayed
+			    5. Verify that the popup title and options (DELETE, NO) are visible
+			    6. Hover over the "NO" option
+			    7. Verify that the option background color darkens
+			    8. Click on the "NO" option
+	Expected Result: - The popup appears after clicking "DELETE EVENT"
+			         - The popup title "Are you sure you want to delete this event?" is visible
+			         - The 2 options (DELETE, NO) are visible
+	 		         - The "NO" option background color darkens
+			         - The popup closes
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 25: 
+	Test Description: Verify functional usage of the "EDIT EVENT" button
+	Test Steps: 1. Open the Event Details page for the event created in Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Click on the "EDIT EVENT" button
+	Expected Result: - Redirection to the EVPrime "http://localhost:3000/events/{id}/edit" Edit Event page
+			         - The {id} in the URL corresponds to the selected event
+	Actual Result: Same as Expected Result
+	Status: PASS
+============================================================================================================================================================================================================================================
+
+Edit Event Page - Test Cases
+
+Pre-requisite/NOTE: - Do a signup / login with the credentials from the global pre-requisite
+                    - The id is written in {} because every event has its unique id
+                    - The event from test case 13 will be used for validation; in the end the event will be deleted in the last test case 
+
+Test Case 26: 
+	Test Description: Verify hover effects on UI Elements - Event Title field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the Event Title field
+			    4. Verify that the field is highlighted
+	Expected Result: The Event Title field is highlighted
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 27: 
+	Test Description: Verify hover effects on UI Elements - Event Image field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the Event Image field
+			    4. Verify that the field is highlighted
+	Expected Result: The Event Image field is highlighted
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 28: 
+	Test Description: Verify hover effects on UI Elements - Event Date field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the Event Date field
+			    4. Verify that the field is highlighted
+	Expected Result: The Event Date field is highlighted
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 29: 
+	Test Description: Verify hover effects on UI Elements - Event Location field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the Event Location field
+			    4. Verify that the field is highlighted
+	Expected Result: The Event Location field is highlighted
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 30: 
+	Test Description: Verify hover effects on UI Elements - Event Description field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the Event Description field
+			    4. Verify that the field is highlighted
+	Expected Result: The Event Description field is highlighted
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 31: 
+	Test Description: Verify hover effects on UI Elements - "UPDATE EVENT" button
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Hover over the "UPDATE EVENT" button
+			    4. Verify that the button background color darkens
+	Expected Result: The "UPDATE EVENT" button background color darkens 
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 32: 
+	Test Description: Verify effect on clicking on the fields - Event Title field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Click on the Event Title field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the input field border changes to blue
+	Expected Result: - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 33: 
+	Test Description: Verify effect on clicking on the fields - Event Image field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+		    	2. Verify that the event ID in the URL corresponds to the created event
+			    3. Click on the Event Image field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the input field border changes to blue
+	Expected Result: - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 34: 
+	Test Description: Verify effect on clicking on the fields - Event Date field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Click on the Event Date field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the input field border changes to blue
+	Expected Result: - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 35: 
+	Test Description: Verify effect on clicking on the fields - Event Location field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Click on the Event Location field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the input field border changes to blue
+	Expected Result: - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 36: 
+	Test Description: Verify effect on clicking on the fields - Event Description field
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+		    	2. Verify that the event ID in the URL corresponds to the created event
+			    3. Click on the Event Description field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the input field border changes to blue
+	Expected Result: - The field label color changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 37: 
+	NOTE: Usage of the update button can be done with or without modifying the existing data
+	Test Description: Verify functional usage of the "UPDATE EVENT" button
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Click on the "UPDATE EVENT" button
+	Expected Result: - Redirection to the EVPrime Event "http://localhost:3000/events/{id}" Details page
+			         - The {id} in the URL corresponds to the selected event
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 38:
+	Test Description: Verify functional usage of the "UPDATE EVENT" button - Change all fields
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Change the values in every field
+			    4. Click on the "UPDATE EVENT" button
+			    5. Verify that every information has been updated
+	Test Data: Event Title = "Football Match V2"
+		       Event Image = "https://upload.wikimedia.org/wikipedia/commons/0/0b/To%C5%A1e_Proeski_Arena_1.jpg"
+		       Event Date = "23.07.2026"
+		       Event Location = "Skopje, Macedonia"
+		       Event Description = "A football match between Macedonia and Serbia"
+	Expected Result: - Redirection to the EVPrime Event "http://localhost:3000/events/{id}" Details page
+			         - The {id} in the URL corresponds to the selected event
+			         - The event "Football Match" has been updated to event "Football Match V2" and is visible with:
+			            - Event Title: Football Match V2
+			            - Event Date: 23.07.2026
+				        - Event Location: Skopje, Macedonia
+                        - Event Image (URL: https://upload.wikimedia.org/wikipedia/commons/0/0b/To%C5%A1e_Proeski_Arena_1.jpg)
+				        - Event Description: A football match between Macedonia and Serbia
+	Actual Result: Same as Expected Result
+	Status: PASS
+	
+Test Case 39: 
+	NOTE: - Validation for empty fields is currently not fully implemented
+		  - Submitting empty fields currently triggers an application error instead of displaying validation messages
+	Test Description: Verify unsuccessful update of an event - All Fields Empty
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+		    	2. Verify that the event ID in the URL corresponds to the created event
+			    3. Delete the values from all fields
+			    4. Verify that every field is empty
+			    5. Click on the "UPDATE EVENT" button
+	Expected Result: An unexpected application error is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 40: 
+	NOTE: - Validation for empty fields is currently not fully implemented
+		  - Submitting empty fields currently triggers an application error instead of displaying validation messages
+	   	  - Image URLs must start with http or https
+	Test Description: Verify unsuccessful update of an event - Invalid Event Image URL
+	Test Steps: 1. Open the Edit Event page for the event created in the Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Leave the values in every other field
+			    4. Enter invalid value in the image field
+			    5. Click on the "UPDATE EVENT" button
+	Test Data: Event Image = "upload.wikimedia.org/wikipedia/commons/0/0b/To%C5%A1e_Proeski_Arena_1.jpg"
+	Expected Result: An unexpected application error is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+============================================================================================================================================================================================================================================
+
+Event Details Page - Test Cases while user is logged in
+
+NOTE: This is the final scenario where we will test the "DELETE EVENT" button with the DELETE option and delete the used event from test case 13
+
+Test Case 41:
+	Test Description: Verify functional usage of the "DELETE EVENT" button - Choosing the option "DELETE"
+	Test Steps: 1. Open the Event Details page for the event created in Test Case 13
+			    2. Verify that the event ID in the URL corresponds to the created event
+			    3. Click on the "DELETE EVENT" button
+			    4. Verify that the confirmation popup is displayed
+			    5. Verify that the popup title and options (DELETE, NO) are visible
+			    6. Hover over the "DELETE" option
+			    7. Verify that the option background color darkens
+			    8. Click on the "DELETE" option
+	Expected Result: - The popup appears after clicking "DELETE EVENT"
+			         - The popup title "Are you sure you want to delete this event?" is visible
+			         - The 2 options (DELETE, NO) are visible
+	 		         - The "DELETE" option background color darkens
+			         - Redirection to the EVPrime "http://localhost:3000/events" Events page
+	Actual Result: Same as Expected Result
+	Status: PASS

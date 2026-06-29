@@ -1,0 +1,425 @@
+Login Page - Test Cases
+
+Global Pre-requisite/Note: - For test cases that require an authenticated user, log in with valid credentials before executing the steps
+                           - If this particular testing user is not created, create the user by:
+				              - Clicking on the "Login" option at the sidebar
+				              - Clicking on the "CREATE USER" button
+				              - Enter an email (testuser@email.com)
+				              - Enter a password (testuser123)
+				              - Click on the "GO" button
+				           - If the user already exists, use the credentials to log in
+
+============================================================================================================================================================================================================================================
+
+Test Case 1: 
+	Test Description: Verify Login Page UI Elements
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+	            2. Verify that the page title "Login" is visible
+			    3. Verify that an e-mail input field is visible
+			    4. Verify that a password input field is visible
+			    5. Verify that a "GO" button is visible
+			    6. Verify that a "CREATE USER" button is visible
+	Expected Result: - The page title "Login" is visible
+			         - The e-mail input field is visible
+			         - The password input field is visible
+			         - The "GO" button is visible
+			         - The "CREATE USER" button is visible
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 2:
+	Test Description: Verify hover effects on UI Elements - E-mail field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Hover over the e-mail field
+			    3. Verify that the field is highlighted
+	Expected Result: The e-mail field is highlighted upon hover
+	Actual Result: Same as Expected result
+	Status: PASS
+
+Test Case 3:
+	Test Description: Verify hover effects on UI Elements - Password field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Hover over the password field
+			    3. Verify that the field is highlighted
+	Expected Result: The password field is highlighted upon hover
+	Actual Result: Same as Expected result
+	Status: PASS
+
+Test Case 4:
+	Test Description: Verify hover effects on UI Elements - "GO" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Hover over the "GO" button
+			    3. Verify that the button background color darkens
+	Expected Result: The button background color darkens
+	Actual Result: Same as Expected result
+	Status: PASS
+
+Test Case 5:
+	Test Description: Verify hover effects on UI Elements - "CREATE USER" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Hover over the "CREATE USER" button
+			    3. Verify that the button background color darkens
+	Expected Result: The button background color darkens
+	Actual Result: Same as Expected result
+	Status: PASS
+
+Test Case 6: 
+	Test Description: Verify effect on clicking on the fields - E-mail field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Click on the e-mail field
+			    3. Verify that the label moves above the input field
+			    4. Verify that the field label changes its color to blue
+			    5. Verify that the field border changes its color to blue
+	Expected Result: - The field label moves above the input field
+			         - The field label changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 7: 
+	Test Description: Verify effect on clicking on the fields - Password field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Click on the password field
+			    3. Verify that the label moves above the input field
+			    4. Verify that the field label changes its color to blue
+			    5. Verify that the field border changes its color to blue
+	Expected Result: - The field label moves above the input field
+			         - The field label changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 8:
+	NOTE: Login with the test account from the Global Pre-requisite section
+	Test Description: Verify functional usage of the "GO" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Enter valid value in the e-mail field
+			    3. Enter valid value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail: "testuser@email.com"
+		       password: "testuser123"
+	Expected Result: - Redirection to the EVPrime "http://localhost:3000/" Home page
+			         - The Login option disappears from the sidebar
+			         - A Log out option appears in the lower-left corner of the sidebar
+			         - The Add Event option (+) becomes visible
+	Actual Result: Same as Expected Result
+	Status: PASS
+	Post-requisite: Log out from the application
+
+Test Case 9:
+	NOTE: A non-existing e-mail address is used
+	Test Description: Verify unsuccessful login - Authentication failed (non-existing e-mail)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Enter non-existing value in the e-mail field
+			    3. Enter any value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail: "nonexisting@mail.com"
+		       password: "nonexisting123"
+	Expected Result: An error message "Authentication failed." is displayed to the user
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 10:
+	Test Description: Verify unsuccessful login - Authentication failed (empty e-mail field)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Leave the e-mail field empty
+			    3. Enter any value in the password field
+			    4. Click on the "GO" button
+	Test Data: password: "nonexisting123"
+	Expected Result: An error message "Authentication failed." is displayed to the user
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 11:
+	Test Description: Verify unsuccessful login - Authentication failed (empty password field)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Enter any non-existing value in the e-mail field
+			    3. Leave the password field empty
+			    4. Click on the "GO" button
+	Test Data: e-mail: "nonexisting@mail.com"
+	Expected Result: An error message "Authentication failed." is displayed to the user
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 12:
+	Test Description: Verify unsuccessful login - Authentication failed (empty fields)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Leave the e-mail field empty
+			    3. Leave the password field empty
+			    4. Click on the "GO" button
+	Expected Result: An error message "Authentication failed." is displayed to the user
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 13: 
+	NOTE: The existing e-mail value from the pre-requisite is used 
+	Test Description: Verify unsuccessful login - Registered e-mail with wrong password
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Enter valid existing value in the e-mail field
+			    3. Enter an invalid password in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail = "testuser@email.com"
+		       password = "wrongpassword123"
+	Expected Result: - An error message "Invalid email or password entered." is displayed
+			         - An additional text "Invalid credentials." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+	Post-requisite: Clear the e-mail and password fields
+
+Test Case 14:
+	Test Description: Verify functional usage of the "CREATE USER" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+			    2. Click on the "CREATE USER" button
+	Expected Result: Redirection to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+============================================================================================================================================================================================================================================
+
+Signup Page - Test Cases
+
+Test Case 15: 
+	Test Description: Verify Signup Page UI Elements
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Verify that the page title "Create new user" is visible
+			    3. Verify that an e-mail input field is visible
+			    4. Verify that a password input field is visible
+			    5. Verify that a "GO" button is visible
+			    6. Verify that a "LOG IN" button is visible
+	Expected Result: - The page title "Create new user" is visible
+			         - The e-mail input field is visible
+			         - The password input field is visible
+			         - The "GO" button is visible
+			         - The "LOG IN" button is visible
+	Actual Result: Same as Expected Result
+	Status: PASS
+	
+Test Case 16:
+	Test Description: Verify hover effects on UI Elements - E-mail field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Hover over the e-mail field
+			    3. Verify that the field is highlighted
+	Expected Result: The e-mail field is highlighted upon hover
+	Actual Result: Same as Expected result
+	Status: PASS
+
+Test Case 17:
+	Test Description: Verify hover effects on UI Elements - Password field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Hover over the password field
+			    3. Verify that the field is highlighted
+	Expected Result: The password field is highlighted upon hover
+	Actual Result: Same as Expected result
+	Status: PASS
+
+Test Case 18:
+	Test Description: Verify hover effects on UI Elements - "GO" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Hover over the "GO" button
+			    3. Verify that the button background color darkens
+	Expected Result: The button background color darkens
+	Actual Result: Same as Expected result
+	Status: PASS
+
+Test Case 19:
+	Test Description: Verify hover effects on UI Elements - "LOG IN" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Hover over the "LOG IN" button
+			    3. Verify that the button background color darkens
+	Expected Result: The button background color darkens
+	Actual Result: Same as Expected result
+	Status: PASS
+
+Test Case 20: 
+	Test Description: Verify effect on clicking on the fields - E-mail field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Click on the e-mail field
+			    3. Verify that the label moves above the input field
+			    4. Verify that the field label changes its color to blue
+			    5. Verify that the field border changes its color to blue
+	Expected Result: - The field label moves above the input field
+			         - The field label changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 21: 
+	Test Description: Verify effect on clicking on the fields - Password field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Click on the password field
+			    3. Verify that the label moves above the input field
+			    4. Verify that the field label changes its color to blue
+			    5. Verify that the field border changes its color to blue
+	Expected Result: - The field label moves above the input field
+			         - The field label changes its color to blue
+			         - The field border changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 22:
+	NOTE: - New valid credentials will be used to create the new user
+		  - The e-mail value must be in a valid e-mail format and contain @ (e.g., validemail@email.com)
+		  - The password value must be at least 6 characters long
+	Test Description: Verify functional usage of the "GO" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Enter valid value in the e-mail field
+			    3. Enter valid value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail = "frontendtest@email.com"
+		       password = "frontendtest123"
+	Expected Result: Redirection to the EVPrime "http://localhost:3000/" Home page
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 23:
+	NOTE: - New valid credentials will be used to create the new user
+		  - The e-mail value must be in a valid e-mail format and contain @ (e.g., validemail@email.com)
+		  - The password value must be at least 6 characters long
+	Test Description: Verify functional usage of the "GO" button - Password minimum valid length boundary value (6 characters)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Enter valid value in the e-mail field
+			    3. Enter valid value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail = "passwordtest@email.com"
+		       password = "test12"
+	Expected Result: Redirection to the EVPrime "http://localhost:3000/" Home page
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 24: 
+	NOTE: - The e-mail value must be in an invalid e-mail format and does not contain @ (e.g., invalidemail.com)
+		  - The password value must be at least 6 characters long
+	Test Description: Verify unsuccessful signup - Invalid e-mail format
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Enter invalid value in the e-mail field
+			    3. Enter valid value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail = "frontendtestemail.com"
+		       password = "frontendtest123"
+	Expected Result: - An error message "Invalid email." is displayed
+			         - An additional text "User signup failed due to validation errors." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 25: 
+	Test Description: Verify unsuccessful signup - Empty e-mail field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Leave the e-mail field empty
+			    3. Enter valid value in the password field
+			    4. Click on the "GO" button
+	Test Data: password = "frontendtest123"
+	Expected Result: - An error message "Invalid email." is displayed
+			         - An additional text "User signup failed due to validation errors." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 26: 
+	NOTE: - Use the e-mail address from the global pre-requisite
+		  - A different password will be used to verify the case
+	Test Description: Verify unsuccessful signup - E-mail exists already
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Enter an existing value in the e-mail field
+			    3. Enter any valid value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail = "testuser@email.com"
+		       password = "existinguser123"
+	Expected Result: - An error message "Email exists already." is displayed
+			         - An additional text "User signup failed due to validation errors." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 27: 
+	NOTE: - A valid e-mail will be used
+		  - The password value must be lower than 6 characters long for negative case
+	Test Description: Verify unsuccessful signup - Invalid password (Below Minimum Length) 
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Enter valid value in the e-mail field
+			    3. Enter invalid value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail = "negativecase@email.com"
+		       password = "bad"
+	Expected Result: - An error message "Invalid password. Must be at least 6 characters long." is displayed
+			         - An additional text "User signup failed due to validation errors." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 28: 
+	NOTE: - A valid e-mail will be used
+		  - The password value must be lower than 6 characters long for negative case
+	Test Description: Verify unsuccessful signup - Invalid password (Max Range Character Value) 
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Enter valid value in the e-mail field
+			    3. Enter invalid value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail = "negativecase@email.com"
+		       password = "bad12"
+	Expected Result: - An error message "Invalid password. Must be at least 6 characters long." is displayed
+			         - An additional text "User signup failed due to validation errors." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 29: 
+	NOTE: - A valid e-mail will be used
+		  - The password value must be lower than 6 characters long for negative case
+	Test Description: Verify unsuccessful signup - Invalid password (Empty Password field) 
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Enter valid value in the e-mail field
+			    3. Leave the password field empty
+			    4. Click on the "GO" button
+	Test Data: e-mail = "negativecase@email.com"
+	Expected Result: - An error message "Invalid password. Must be at least 6 characters long." is displayed
+			         - An additional text "User signup failed due to validation errors." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 30:
+	NOTE: - The e-mail value must be in an invalid e-mail format and does not contain @ (e.g., invalidemail.com)
+		  - The password value must be lower than 6 characters long for negative case
+	Test Description: Verify unsuccessful signup - Invalid e-mail format and password
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Enter invalid value in the e-mail field
+			    3. Enter invalid value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail = "frontendtestemail.com"
+		       password = "bad12"
+	Expected Result: - An error message "Invalid email." is displayed
+			         - An additional error message "Invalid password. Must be at least 6 characters long." is displayed
+			         - An additional text "User signup failed due to validation errors." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 31:
+	Test Description: Verify unsuccessful signup - Empty e-mail and password fields
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Leave the e-mail field empty
+			    3. Leave the password field empty
+			    4. Click on the "GO" button
+	Expected Result: - An error message "Invalid email." is displayed
+			         - An additional error message "Invalid password. Must be at least 6 characters long." is displayed
+			         - An additional text "User signup failed due to validation errors." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 32: 
+	NOTE: Use the e-mail address from the global pre-requisite
+	Test Description: Verify unsuccessful signup - Existing e-mail and invalid password
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Enter an existing value in the e-mail field
+			    3. Enter invalid value in the password field
+			    4. Click on the "GO" button
+	Test Data: e-mail = "testuser@email.com"
+		       password = "bad12"
+	Expected Result: - An error message "Email exists already." is displayed
+			         - An additional error message "Invalid password. Must be at least 6 characters long." is displayed
+			         - An additional text "User signup failed due to validation errors." is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+	Post-requisite: Clear the e-mail and password fields
+
+Test Case 33:
+	Test Description: Verify functional usage of the "LOG IN" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/auth?mode=signup" Signup page
+			    2. Click on the "LOG IN" button
+	Expected Result: Redirection to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+	Actual Result: Same as Expected Result
+	Status: PASS

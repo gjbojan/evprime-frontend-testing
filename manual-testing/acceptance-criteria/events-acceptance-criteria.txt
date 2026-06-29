@@ -1,0 +1,281 @@
+EVENTS Acceptance Criteria
+NOTE: - User must be logged in to create, edit, update, or delete events
+	  - Event list and event details can be viewed without login
+
+Test Scenario 1: Add Event Menu Navigation
+Pre-requisite: User is logged in
+GIVEN the user is on any page of the EVPrime application
+WHEN the user hovers over the add an event (+) in the blue circle in the down right corner area
+AND the add an event (+) button changes into an (x) button
+AND the button background darkens
+AND another "Create an event" button in a white circle on top of it has appeared 
+WHEN the user hovers over the "Create an event" button
+AND the button background darkens
+AND the buttons name "Create an event" is shown
+WHEN the user clicks on the "Create an event" button
+THEN the user is redirected to the EVPrime "http://localhost:3000/events/new" Create new event page
+
+============================================================================================================================================================================================================================================
+
+Create New Event Page Acceptance Criteria
+
+NOTE: - If user is not already on the Create New Event page, navigation can be performed via:
+	  - Hovering on the add an event (+) option down right corner area then clicking on the "Create an event" button 
+	  - Hover effects are covered in a dedicated scenario and are not repeated in the functional scenarios
+      - Click effects are covered in a dedicated scenario and are not repeated in the functional scenarios
+
+Pre-requisite: User is logged in
+
+Test Scenario 2: Verify hover effects on UI elements
+GIVEN the user is on the EVPrime "http://localhost:3000/events/new" Create New Event page
+WHEN the user hovers over the Event Title field
+THEN the field is highlighted
+WHEN the user hovers over the Event Image field
+THEN the field is highlighted
+WHEN the user hovers over the Event Date field
+THEN the field is highlighted
+WHEN the user hovers over the Event Location field
+THEN the field is highlighted
+WHEN the user hovers over the Event Description field
+THEN the field is highlighted
+WHEN the user hovers over the "CREATE EVENT" button
+THEN the button background color darkens
+
+Test Scenario 3: Verify effect on clicking on the fields
+GIVEN the user is on the EVPrime "http://localhost:3000/events/new" Create New Event page
+WHEN the user clicks on the Event Title field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the Event Image field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the Event Date field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the Event Location field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the Event Description field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+
+Test Scenario 4: Functional "CREATE EVENT" button - Successful Create A New Event scenario
+NOTE: - Valid value for the Event Image field means an URL with http/https
+	  - Every new created event is next in line
+GIVEN the user is on the EVPrime "http://localhost:3000/events/new" Create New Event page
+WHEN the user enters any value in the Event Title field
+AND the user enters valid value in the Event Image field
+AND the user enters any value in the Event Date field
+AND the user enters any value in the Event Location field
+AND the user enters any value in the Event Description field
+AND the user clicks on the "CREATE EVENT" button
+THEN the user is redirected to the EVPrime "http://localhost:3000/events" Events page
+AND the new event is added in the list
+
+Test Scenario 5: Unsuccessful creation of a new event - All Fields Empty
+NOTE: - Validation for empty fields is currently not fully implemented
+	  - Submitting empty fields currently triggers an application error instead of displaying validation messages
+GIVEN the user is on the EVPrime "http://localhost:3000/events/new" Create New Event page
+WHEN the user leaves the Event Title field empty
+AND the user leaves the Event Image field empty
+AND the user leaves the Event Date field empty
+AND the user leaves the Event Location field empty
+AND the user leaves the Event Description field empty
+AND the user clicks on the "CREATE EVENT" button
+THEN an unexpected application error is displayed
+
+Test Scenario 6: Unsuccessful creation of a new event - Invalid Event Image URL
+NOTE: - Validation for invalid image URLs is currently not fully implemented
+	  - Submitting an invalid image URL currently triggers an application error instead of displaying validation messages
+	  - Image URLs must start with http or https
+GIVEN the user is on the EVPrime "http://localhost:3000/events/new" Create New Event page
+WHEN the user enters any value in all required fields
+AND the user enters an image URL without http or https
+AND the user clicks on the "CREATE EVENT" button
+THEN an unexpected application error is displayed
+
+============================================================================================================================================================================================================================================
+
+Events Page Acceptance Criteria
+
+Pre-requisite: Event/s must be added first
+
+NOTE: If user is not already on the Events page, navigation can be performed via the Events option in the sidebar
+
+Test Scenario 7: Events Page UI Elements
+GIVEN the user is on the EVPrime "http://localhost:3000/events" Events page
+WHEN the page is displayed to the user
+THEN the user sees a list of events
+AND the user sees the following information about each event: - Event Image
+                                                              - Event Title
+										                      - Event Date
+
+Test Scenario 8: Clickable Event
+NOTE: The id is written in {} because every event has its unique id
+GIVEN the user is on the EVPrime "http://localhost:3000/events" Events page
+WHEN the user clicks on the events image
+THEN the user is redirected to that specific Events "http://localhost:3000/events/{id}" page
+
+============================================================================================================================================================================================================================================
+
+Event Details Page
+Pre-requisite: Events must be added first
+NOTE: The id is written in {} because every event has its unique id
+
+NOTE: If user is not already on the Event Details page, navigation can be performed via:
+	     - The Events option at the sidebar area
+	     - Clicking on one of the events image
+
+Test Scenario 9: Events Details Page UI Elements
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}" Events page
+WHEN the page is displayed to the user
+THEN the following information is displayed to the user: - Event Title
+									                     - Event Date
+									                     - Event Location
+									                     - Event Image
+									                     - Event Description
+AND a "BACK TO EVENTS" button is also displayed to the user
+
+Test Scenario 10: Functional "BACK TO EVENTS" button
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}" Events page
+WHEN the user hovers over the "BACK TO EVENTS" button
+THEN the button background color darkens
+WHEN the user clicks on the "BACK TO EVENTS" button
+THEN the user is redirected back to the EVPrime "http://localhost:3000/events" Events page
+
+============================================================================================================================================================================================================================================
+
+Event Scenarios while user is logged in
+Pre-requisite: User must be logged in
+NOTE: - If user is not already on the Event Details page, navigation can be performed via:
+	     - The Events option at the sidebar area
+	     - Clicking on one of the events image
+	  - The id is written in {} because every event has its unique id
+
+Test Scenario 11: Events Details Page UI Elements - Logged In User
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}" Events page
+WHEN the page is displayed to the user
+THEN the following information is displayed to the user: - Event Title
+									                     - Event Date
+									                     - Event Location
+									                     - Event Image
+									                     - Event Description
+AND the following additional buttons are displayed: - "DELETE EVENT"
+				   				                    - "EDIT EVENT"
+				   				                    - "BACK TO EVENTS"
+
+Test Scenario 12: Verify hover effect on UI elements
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}" Events page
+WHEN the user hovers over the "DELETE EVENT" button
+THEN the button background color darkens
+WHEN the user hovers over the "EDIT EVENT" button
+THEN the button background color darkens
+WHEN the user hovers over the "BACK TO EVENTS" button
+THEN the button background color darkens
+
+Test Scenario 13: Functional "DELETE EVENT" button - User chooses the option "NO"
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}" Events page
+WHEN the user clicks on the "DELETE EVENT" button
+THEN a popup appears
+AND the popup "Are you sure you want to delete this event?" title is displayed to the user
+AND the user is presented with 2 options: - DELETE 
+					   	                  - NO
+WHEN the user hovers over the "NO" option
+THEN the option background color darkens
+WHEN the user clicks on the "NO" option
+THEN the popup closes
+
+Test Scenario 14: Functional "DELETE EVENT" button - User chooses the option "DELETE"
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}" Events page
+WHEN the user clicks on the "DELETE EVENT" button
+THEN a popup appears
+AND the popup "Are you sure you want to delete this event?" title is displayed to the user
+AND the user is presented with 2 options: - DELETE 
+					   	                  - NO
+WHEN the user hovers over the "DELETE" option
+THEN the option background color darkens
+WHEN the user clicks on the "DELETE" option
+THEN the user is redirected back to the EVPrime "http://localhost:3000/events" Events page
+
+Test Scenario 15: Functional "EDIT EVENT" button
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}" Events page
+WHEN the user clicks on the "EDIT EVENT" button
+THEN the user is redirected to the EVPrime Edit "http://localhost:3000/events/{id}/edit" Events page
+
+============================================================================================================================================================================================================================================
+
+Update Event Page
+NOTE: - The id is written in {} because every event has its unique id
+	  - If user is not already on the Edit Events page; navigation can be performed via:
+	     - The Events option in the sidebar
+	     - Clicking on an event
+	     - Clicking on the "EDIT EVENT" button
+
+Pre-requisite: User is logged in
+
+Test Scenario 16: Functional "UPDATE EVENT" button
+NOTE: The user can update the event with or without modifying the existing data
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}/edit" Events page
+WHEN the user clicks on the "UPDATE EVENT" button
+THEN the user is redirected back to that specific Event "http://localhost:3000/events/{id}" Details page
+
+Test Scenario 17: Unsuccessful update of an event - All Fields Empty
+NOTE: - Validation for empty fields is currently not fully implemented
+	  - Submitting empty fields currently triggers an application error instead of displaying validation messages
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}/edit" Events page
+WHEN the user clears the Event Title field
+AND the user clears the Event Image field 
+AND the user clears the Event Date field 
+AND the user clears the Event Location field 
+AND the user clears the Event Description field 
+AND the user clicks on the "UPDATE EVENT" button
+THEN an unexpected application error is displayed
+
+Test Scenario 18: Unsuccessful update of an event - Invalid Event Image URL
+NOTE: - Validation for invalid image URLs is currently not fully implemented
+	  - Submitting an invalid image URL currently triggers an application error instead of displaying validation messages
+	  - Image URLs must start with http or https
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}/edit" Events page
+WHEN the user enters any value in all required fields
+AND the user enters an image URL without http or https
+AND the user clicks on the "UPDATE EVENT" button
+THEN an unexpected application error is displayed
+
+Test Scenario 19: Verify hover effects on UI elements
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}/edit" Events page
+WHEN the user hovers over the Event Title field
+THEN the field is highlighted
+WHEN the user hovers over the Event Image field
+THEN the field is highlighted
+WHEN the user hovers over the Event Date field
+THEN the field is highlighted
+WHEN the user hovers over the Event Location field
+THEN the field is highlighted
+WHEN the user hovers over the Event Description field
+THEN the field is highlighted
+WHEN the user hovers over the "UPDATE EVENT" button
+THEN the button background color darkens
+
+Test Scenario 20: Verify effect on clicking on the fields
+NOTE: On the Edit Event page, fields are pre-filled, so labels are already displayed above the input fields
+GIVEN the user is on the EVPrime "http://localhost:3000/events/{id}/edit" Events page
+WHEN the user clicks on the Event Title field
+THEN the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the Event Image field
+THEN the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the Event Date field
+THEN the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the Event Location field
+THEN the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the Event Description field
+THEN the field label color changes to blue
+AND the input field border changes to blue

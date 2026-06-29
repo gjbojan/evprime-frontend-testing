@@ -1,0 +1,179 @@
+Login Page Acceptance Criteria
+
+NOTE: - If user is not already on the Login page, navigation can be performed via the Login option in the sidebar
+	  - Hover effects are covered in a dedicated scenario and are not repeated in the functional scenarios
+
+============================================================================================================================================================================================================================================
+
+Test Scenario 1: Login Page UI Elements
+GIVEN the user is on the EVPrime Login "http://localhost:3000/auth?mode=login" page
+WHEN the page is displayed to the user
+THEN the page title "Log in" is visible 
+AND an e-mail input field is visible
+AND a password input field is visible
+AND a "GO" button is visible
+AND a "CREATE USER" button is visible
+
+Test Scenario 2: Verify hover effects on UI elements
+GIVEN the user is on the EVPrime Login "http://localhost:3000/auth?mode=login" page
+WHEN the user hovers over the e-mail field 
+THEN the field is highlighted
+WHEN the user hovers over the password field
+THEN the field is highlighted
+WHEN the user hovers over the "GO" button
+THEN the button background color darkens
+WHEN the user hovers over the "CREATE USER" button
+THEN the button background color darkens
+
+Test Scenario 3: Verify effect on clicking on the fields
+GIVEN the user is on the EVPrime Login "http://localhost:3000/auth?mode=login" page
+WHEN the user clicks on the e-mail field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the password field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+
+Test Scenario 4: Functional "GO" button - Successful Login scenario
+Pre-requisite: - User has to already have an account created
+		       - The user can create an account by clicking on the "CREATE USER" button
+GIVEN the user is on the EVPrime Login "http://localhost:3000/auth?mode=login" page
+WHEN the user enters valid value in the e-mail field
+AND the user enters valid value in the password field
+AND the user clicks on the "GO" button
+THEN the user is redirected back to the EVPrime "http://localhost:3000/" Home page
+AND the Login option from the sidebar area disappears
+AND a Log out option appears in the lower-left corner of the sidebar
+AND the Add Event option (+) becomes visible to the user
+
+Test Scenario 5: Unsuccessful login - Authentication failed (non-existing e-mail)
+NOTE: A non-existing e-mail address should be used
+GIVEN the user is on the EVPrime Login "http://localhost:3000/auth?mode=login" page
+WHEN the user enters invalid value in the e-mail field
+AND the user enters any value in the password field
+AND the user clicks on the "GO" button
+THEN an error message "Authentication failed." is displayed to the user
+
+Test Scenario 6: Unsuccessful login - Authentication failed (empty fields)
+GIVEN the user is on the EVPrime Login "http://localhost:3000/auth?mode=login" page
+WHEN the user leaves the e-mail field empty
+AND the user leaves the password field empty
+AND the user clicks on the "GO" button
+THEN an error message "Authentication failed." is displayed to the user
+
+Test Scenario 7: Unsuccessful login - Registered e-mail with wrong password
+Pre-requisite: - User has to already have an account created
+		       - The user can create an account by clicking on the "CREATE USER" button
+GIVEN the user is on the EVPrime Login "http://localhost:3000/auth?mode=login" page
+WHEN the user enters a valid registered value in the e-mail field
+AND the user enters an invalid value in the password field
+AND the user clicks on the "GO" button
+THEN an error message "Invalid email or password entered." is displayed to the user
+AND an additional text "Invalid credentials." is also displayed 
+
+Test Scenario 8: Functional "CREATE USER" button
+GIVEN the user is on the EVPrime Login "http://localhost:3000/auth?mode=login" page
+WHEN the user clicks on the "CREATE USER" button 
+THEN the user is redirected to the "http://localhost:3000/auth?mode=signup" EVPrime Signup page
+
+============================================================================================================================================================================================================================================
+
+Signup Page Acceptance Criteria
+
+Pre-requisite/Note: If the user is not already on the Signup page, navigation can be performed by:
+			           - Clicking on the Login option in the sidebar
+			           - Clicking on the "CREATE USER" button
+
+Test Scenario 9: Signup Page UI Elements
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the page is displayed to the user
+THEN the page title "Create new user" is visible 
+AND an e-mail input field is visible
+AND a password input field is visible
+AND a "GO" button is visible
+AND a "LOG IN" button is visible
+
+Test Scenario 10: Verify hover effects on UI elements
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the user hovers over the e-mail field 
+THEN the field is highlighted
+WHEN the user hovers over the password field
+THEN the field is highlighted
+WHEN the user hovers over the "GO" button
+THEN the button background darkens
+WHEN the user hovers over the "LOG IN" button
+THEN the button background darkens
+
+Test Scenario 11: Verify effect on clicking on the fields - Signup
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the user clicks on the e-mail field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+WHEN the user clicks on the password field
+THEN the field label moves above the input field
+AND the field label color changes to blue
+AND the input field border changes to blue
+
+Test Scenario 12: Functional "GO" button - Successful Signup scenario
+NOTE: - The e-mail value must be in a valid e-mail format and contain @ (e.g., validemail@email.com)
+	  - The password value must be at least 6 characters long
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the user enters valid value in the e-mail field
+AND the user enters valid value in the password field
+AND the user clicks on the "GO" button
+THEN the user is redirected back to the EVPrime "http://localhost:3000/" Home page
+
+Test Scenario 13: Unsuccessful signup - Invalid e-mail format
+NOTE: The e-mail value must be in an invalid e-mail format and does not contain @ (e.g, invalidemail.com)
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the user enters an invalid value in the e-mail field
+AND the user enters valid value in the password field
+AND the user clicks on the "GO" button
+THEN an error message "Invalid email." is displayed to the user
+AND an additional text "User signup failed due to validation errors." is also displayed
+
+Test Scenario 14: Unsuccessful signup - Already existing e-mail
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the user enters an already existing e-mail value
+AND the user enters valid value in the password field
+AND the user clicks on the "GO" button
+THEN an error message "Email exists already." is displayed to the user 
+AND an additional text "User signup failed due to validation errors." is also displayed
+
+Test Scenario 15: Unsuccessful signup - Invalid password 
+NOTE: The password value must be lower than 6 characters
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the user enters valid value in the e-mail field
+AND the user enters an invalid value in the password field
+AND the user clicks on the "GO" button
+THEN an error message "Invalid password. Must be at least 6 characters long." is displayed to the user
+AND an additional text "User signup failed due to validation errors." is also displayed
+
+Test Scenario 16: Unsuccessful signup - Invalid e-mail format and password
+NOTE: - The e-mail value must be in an invalid e-mail format and does not contain @ (e.g, invalidemail.com)
+	  - The password value must be lower than 6 characters
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the user enters an invalid value in the e-mail field
+AND the user enters an invalid value in the password field
+AND the user clicks on the "GO" button
+THEN an error message "Invalid email." is displayed to the user
+AND an additional error message "Invalid password. Must be at least 6 characters long." is displayed
+AND an additional text "User signup failed due to validation errors." is also displayed
+
+Test Scenario 17: Unsuccessful signup - Existing e-mail and invalid password
+NOTE: The password value must be lower than 6 characters
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the user enters an already existing e-mail value
+AND the user enters an invalid value in the password field
+AND the user clicks on the "GO" button
+THEN an error message "Email exists already." is displayed to the user
+AND an additional error message "Invalid password. Must be at least 6 characters long." is displayed
+AND an additional text "User signup failed due to validation errors." is also displayed
+
+Test Scenario 18: Functional "LOG IN" button
+GIVEN the user is on the EVPrime Signup "http://localhost:3000/auth?mode=signup" page
+WHEN the user clicks on the "LOG IN" button
+THEN the user is redirected to the EVPrime "http://localhost:3000/auth?mode=login" Login page

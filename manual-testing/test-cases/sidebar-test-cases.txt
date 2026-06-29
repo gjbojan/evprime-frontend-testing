@@ -1,0 +1,117 @@
+Sidebar - Test Cases
+
+NOTE: - The sidebar is visible by default in collapsed mode
+	- The expanded state additionally displays navigation labels
+	- Navigation behavior is identical in both collapsed and expanded sidebar states
+	- The sidebar is available on every page
+
+Global Pre-requisite/Note: - For test cases that require an authenticated user, log in with valid credentials before executing the steps
+				   - If this particular testing user is not created, create the user by:
+				     - Clicking on the "Login" option at the sidebar
+				     - Clicking on the "CREATE USER" button
+				     - Enter an email (testuser@email.com)
+				     - Enter a password (testuser123)
+				     - Click on the "GO" button
+				   - If the user already exists, use the credentials to log in
+
+============================================================================================================================================================================================================================================
+
+Test Case 1:
+	Test Description: Verify functional usage of "Three lines" (Menu) button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/" Home page
+			2. Hover over the "Three lines" (Menu) button
+			3. Verify that a circular hover effect appears
+			4. Click on the "Three lines" (Menu) button
+	Expected Result: - A circular hover effect appears
+			     - The sidebar expands
+			     - Navigation labels are displayed next to the icons
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 2: 
+	Test Description: Verify functional usage of "Close" (<) button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/" Home page
+			2. Hover over the "Close" (<) button
+			3. Verify that a circular hover effect appears
+			4. Click on the "Close" (<) button
+	Expected Result: - A circular hover effect appears
+			     - The sidebar collapses
+			     - Only the navigation icons remain visible
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+============================================================================================================================================================================================================================================
+
+NOTE: - It does not matter if the following cases are done in expanded or collapsed sidebar state
+	- The sidebar state should remain in the state it is after the redirection
+
+Test Case 3: 
+	Test Description: Verify functional usage of "Home" option
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events" Events page
+			2. Hover over the "Home" option
+			3. Verify that the background color darkens for hover effect
+			4. Click on the "Home" option
+	Expected Result: - The background color darkens upon hover
+			     - Redirection to the EVPrime "http://localhost:3000/" Home page
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 4: 
+	Test Description: Verify functional usage of "Events" option
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/" Home page
+			2. Hover over the "Events" option
+			3. Verify that the background color darkens for hover effect
+			4. Click on the "Events" option
+	Expected Result: - The background color darkens upon hover
+			     - Redirection to the EVPrime "http://localhost:3000/events" Events page
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 5: 
+	Test Description: Verify functional usage of "Contact" option
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/" Home page
+			2. Hover over the "Contact" option
+			3. Verify that the background color darkens for hover effect
+			4. Click on the "Contact" option
+	Expected Result: - The background color darkens upon hover
+			     - Redirection to the EVPrime "http://localhost:3000/contact" Contact page
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 6: 
+	Test Description: Verify functional usage of "Login" option
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/" Home page
+			2. Hover over the "Login" option
+			3. Verify that the background color darkens for hover effect
+			4. Click on the "Login" option
+	Expected Result: - The background color darkens upon hover
+			     - Redirection to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 7: 
+	Pre-requisite: Log in with the test account from the Global Pre-requisite section
+	Test Description: Verify functional usage of "Log out" option
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/events" Events page
+			2. Hover over the "Log out" option
+			3. Verify that the background color darkens for hover effect
+			4. Click on the "Log out" option
+	Expected Result: - The background color darkens upon hover
+			     - Redirection to the EVPrime "http://localhost:3000/" Home page
+			     - The "Log out" option transforms into a "Login" option
+			     - The "Login" option is displayed again below the other sidebar options
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 8: 
+	Pre-requisite: Log in with the test account from the Global Pre-requisite section
+	Test Description: Verify functional usage of "Log out" option - While on Home page
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/" Home page
+			2. Hover over the "Log out" option
+			3. Verify that the background color darkens for hover effect
+			4. Click on the "Log out" option
+	Expected Result: - The background color darkens upon hover
+			     - The "Log out" option transforms into a "Login" option
+			     - The "Login" option is displayed again below the other sidebar options
+	Actual Result: Same as Expected Result
+	Status: PASS

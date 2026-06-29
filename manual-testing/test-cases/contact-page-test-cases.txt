@@ -1,0 +1,231 @@
+Contact Page - Test Cases
+
+NOTE: - Login is not mandatory
+	  - Required field and invalid email messages are browser/native HTML5 validation messages
+	  - The successful SEND flow is currently not completed; submitting valid data displays an unexpected 405 Method Not Allowed error page
+
+============================================================================================================================================================================================================================================
+
+Test Case 1: 
+	Test Description: Verify Contact Page UI Elements
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Verify that the page title "Want to reach out?" is visible
+			    3. Verify that a username input field is visible
+			    4. Verify that an e-mail input field is visible
+			    5. Verify that a message input field is visible
+			    6. Verify that a "SEND" button is visible
+			    7. Verify that the following contact information is visible: - Address
+													                         - Email
+												                             - Phone Number
+	Expected Result: - The page title "Want to reach out?" is visible
+			         - The username input field is visible
+			         - The e-mail input field is visible
+			         - The message input field is visible
+			         - The "SEND" button is visible
+			         - The contact information is visible with the contact values: - Address             Rampo Lefkata 1
+														                           - Email               ev@rampo.com
+														                           - Phone Number        +389 75 500 000
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 2:
+	Test Description: Verify hover effects on UI Elements - Username field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Hover over the username field
+			    3. Verify that the field is highlighted
+			    4. Verify that a "Please fill out this field." message pops up
+	Expected Result: - The username field is highlighted upon hover
+			         - The message "Please fill out this field." pops up
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 3:
+	Test Description: Verify hover effects on UI Elements - E-mail field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Hover over the e-mail field
+			    3. Verify that the field is highlighted
+			    4. Verify that a "Please fill out this field." message pops up
+	Expected Result: - The e-mail field is highlighted upon hover
+			         - The message "Please fill out this field." pops up
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 4:
+	Test Description: Verify hover effects on UI Elements - Message field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Hover over the message field
+			    3. Verify that the field is highlighted
+			    4. Verify that a "Please fill out this field." message pops up
+	Expected Result: - The message field is highlighted upon hover
+			         - The message "Please fill out this field." pops up
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 5:
+	Test Description: Verify hover effects on UI Elements - "SEND" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Hover over the "SEND" button
+			    3. Verify that the button background color darkens
+	Expected Result: The button background color darkens upon hover effect
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 6: 
+	Test Description: Verify effect on clicking on the fields - Username field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+		    	2. Click on the username field
+			    3. Verify that the line changes its color to blue
+	Expected Result: The username field line changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 7:
+	Test Description: Verify effect on clicking on the fields - E-mail field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Click on the e-mail field
+			    3. Verify that the line changes its color to blue
+	Expected Result: The e-mail field line changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 8:
+	Test Description: Verify effect on clicking on the fields - Message field
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Click on the message field
+			    3. Verify that the label moves above the input field
+			    4. Verify that the field label color changes to blue
+			    5. Verify that the line changes its color to blue
+	Expected Result: - The message label moves above the input field
+			         - The message field label color changes to blue
+			        - The message field line changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 9:
+	NOTE: - The e-mail value must be in a valid e-mail format and contain @ (e.g., validemail@email.com)
+		  - This functionality is currently not fully implemented
+	Test Description: Functional "SEND" button
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Enter any value in the username field
+			    3. Enter valid value in the e-mail field
+			    4. Enter any value in the message field
+			    5. Click on the "SEND" button
+	Test Data: username = "testuser"
+		       e-mail = "testuser@email.com"
+		       message = "this is a test message for the contact page"
+	Expected Result: - An unexpected application error is displayed
+			         - The error message "405 Method Not Allowed" is displayed
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 10: 
+	Test Description: Verify required field message - Username
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Leave the username field empty
+			    3. Leave the e-mail field empty
+			    4. Leave the message field empty
+			    5. Click on the "SEND" button
+	Expected Result: - The "Please fill out this field." error message pops up under the username field
+			         - The field line changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 11: 
+	Test Description: Verify required field message - Username (e-mail populated)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Leave the username field empty
+			    3. Enter valid value in the e-mail field
+			    4. Leave the message field empty
+			    5. Click on the "SEND" button
+	Test Data: e-mail = "testuser@email.com"
+	Expected Result: - The "Please fill out this field." error message pops up under the username field
+			         - The field line changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 12: 
+	Test Description: Verify required field message - Username (e-mail and message populated)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Leave the username field empty
+			    3. Enter valid value in the e-mail field
+			    4. Enter any value in the message field
+			    5. Click on the "SEND" button
+	Test Data: e-mail = "testuser@email.com"
+		       message = "this is a test message for the contact page"
+	Expected Result: - The "Please fill out this field." error message pops up under the username field
+			         - The field line changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 13:
+	Test Description: Verify required field message - E-mail (username populated)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Enter any value in the username field
+			    3. Leave the e-mail field empty
+			    4. Leave the message field empty
+			    5. Click on the "SEND" button
+	Test Data: username = "testuser"
+	Expected Result: - The "Please fill out this field." error message pops up under the username field
+			         - The field line changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 14:
+	Test Description: Verify required field message - E-mail (username and message populated)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Enter any value in the username field
+			    3. Leave the e-mail field empty
+			    4. Enter any value in the message field
+			    5. Click on the "SEND" button
+	Test Data: username = "testuser"
+		       message = "this is a test message for the contact page"
+	Expected Result: - The "Please fill out this field." error message pops up under the username field
+			         - The field line changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 15: 
+	Test Description: Verify error message upon invalid e-mail format 
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+		    	2. Enter any value in the username field
+			    3. Enter invalid value in the e-mail field
+			    4. Verify that the e-mail field line changes its color to red
+			    5. Leave the message field empty
+			    6. Click on the "SEND" button
+	Test Data: username = "testuser"
+		       e-mail = "testuseremail.com"
+	Expected Result: - The "Please include an '@' in the email address. '{value}' is missing an '@'." error message pops up under the e-mail field
+			         - The red e-mail line is highlighted
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 16: 
+	Test Description: Verify error message upon invalid e-mail format (message populated)
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Enter any value in the username field
+			    3. Enter invalid value in the e-mail field
+			    4. Verify that the e-mail field line changes its color to red
+			    5. Enter any value in the message field
+			    6. Click on the "SEND" button
+	Test Data: username = "testuser"
+		       e-mail = "testuseremail.com"
+		       message = "this is a test message for the contact page"
+	Expected Result: - The "Please include an '@' in the email address. '{value}' is missing an '@'." error message pops up under the e-mail field
+			         - The red e-mail line is highlighted
+	Actual Result: Same as Expected Result
+	Status: PASS
+
+Test Case 17:
+	Test Description: Verify required field message - Message 
+	Test Steps: 1. Go to the EVPrime "http://localhost:3000/contact" Contact page
+			    2. Enter any value in the username field
+			    3. Enter valid value in the e-mail field
+			    4. Leave the message field empty
+			    5. Click on the "SEND" button
+	Test Data: username = "testuser"
+		       e-mail = "testuser@email.com"
+	Expected Result: - The "Please fill out this field." error message pops up under the username field
+			         - The label moves above the input field
+			         - The field line changes its color to blue
+	Actual Result: Same as Expected Result
+	Status: PASS

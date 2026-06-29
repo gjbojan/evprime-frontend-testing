@@ -1,0 +1,73 @@
+Sidebar - Acceptance Criteria
+
+NOTE: - The sidebar is visible by default in collapsed mode
+	  - The expanded state additionally displays navigation labels
+	  - Navigation behavior is identical in both collapsed and expanded sidebar states
+	  - The sidebar is available on every page
+
+============================================================================================================================================================================================================================================
+
+Test Scenario 1: Functional "Three lines" (Menu) button 
+GIVEN the user is on any page of the EVPrime application
+WHEN the user hovers over the "Three lines" (Menu) button
+THEN a circle that darkens the background color appears
+WHEN the user clicks on the "Three lines" (Menu) button
+THEN the sidebar expands
+AND navigation labels are displayed next to the icons
+
+Test Scenario 2: Functional "Close" (<) button
+GIVEN the user is on any page of the EVPrime application
+WHEN the user hovers over the "Close" (<) button
+THEN a circle that darkens the background color appears
+WHEN the user clicks on the "Close" (<) button
+THEN the sidebar collapses
+AND only navigation icons remain visible
+
+Test Scenario 3: Functional "Home" option
+GIVEN the user is on any page of the application except the Home page
+WHEN the user hovers over the "Home" option 
+THEN the background color darkens
+WHEN the user clicks on the "Home" option
+THEN the user is redirected back to the EVPrime "http://localhost:3000/" Home page
+
+Test Scenario 4: Functional "Events" option
+GIVEN the user is on any page of the application except the Events page
+WHEN the user hovers over the "Events" option
+THEN the background color darkens
+WHEN the user clicks on the "Events" option
+THEN the user is redirected to the EVPrime "http://localhost:3000/events" Events page
+
+Test Scenario 5: Functional "Contact" option
+GIVEN the user is on any page of the application except the Contact page
+WHEN the user hovers over the "Contact" option
+THEN the background color darkens
+WHEN the user clicks on the "Contact" option
+THEN the user is redirected to the EVPrime "http://localhost:3000/contact" Contact page
+
+Test Scenario 6: Functional "Login" option
+GIVEN the user is on any page of the application except the Login page
+WHEN the user hovers over the "Login" option
+THEN the background color darkens
+WHEN the user clicks on the "Login" option
+THEN the user is redirected to the EVPrime "http://localhost:3000/auth?mode=login" Login page
+
+Test Scenario 7: Functional "Log out" option
+Pre-requisite/NOTE: - The user must be logged in (User is authenticated)
+			        - After a successful login, the Login option is no longer displayed
+GIVEN the user is on any page of the application except the Home page
+WHEN the user hovers over the "Log out" option
+THEN the background color darkens
+WHEN the user clicks on the "Log out" option
+THEN the user is redirected back to the EVPrime "http://localhost:3000/" Home page
+AND the "Log out" option becomes a "Login" option
+AND the option is displayed under the other sidebar options
+
+Test Scenario 8: Functional "Log out" option - While the user is on the Home page
+Pre-requisite: - The user must be logged in (User is authenticated)
+		       - The user must be on the Home page
+GIVEN the user is on the EVPrime "http://localhost:3000/" Home page
+WHEN the user hovers over the "Log out" option
+THEN the background color darkens
+WHEN the user clicks on the "Log out" option
+THEN the "Log out" option becomes a "Login" option
+AND the option moves from the bottom left corner back to the top left corner under the other options
